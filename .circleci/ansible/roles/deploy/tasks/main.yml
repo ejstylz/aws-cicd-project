@@ -1,0 +1,29 @@
+- name: copy util folder to ec2 instance
+  become: yes
+  copy:
+      src: /root/project/artifact.tar.gz
+      dest: /home/ubuntu
+      owner: ubuntu
+
+- name: extract artifact.tar.gz into /home/ubuntu
+  unarchive:
+      src: /root/project/artifact.tar.gz
+      dest: /home/ubuntu
+
+- name: copy docker-compose.yml folder to ec2 instance
+  become: yes
+  copy:
+      src: /root/project/util/docker-compose.yml
+      dest: /home/ubuntu/backend
+      owner: ubuntu
+
+- name: install npm
+  shell:
+      cmd: npm install
+      chdir: /home/ubuntu/backend
+
+- name: use pm2 to run backend
+  become: yes
+  shell: |
+      cd /home/ubuntu/backend/dist
+      pm2 start npm --name backend -- start

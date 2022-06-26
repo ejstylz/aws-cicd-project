@@ -28,7 +28,7 @@ Resources:
             InstanceType: t2.micro
             SecurityGroups:
                 - Ref: InstanceSecurityGroup
-            KeyName: udacity2
+            KeyName: udacity
             ImageId: ami-0cff7528ff583bf9a
             Tags:
                 - Key: Name

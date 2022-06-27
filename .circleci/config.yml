@@ -156,7 +156,7 @@ jobs:
                         --query 'Reservations[*].Instances[*].PublicIpAddress' \
                         --output text)
                       echo "http://$BACKEND_IP:3030" >> .circleci/outputs/backend_url.txt
-                      echo "[web]" >> .circleci/ansible/inventory.txt
+                      echo "[all]" >> .circleci/ansible/inventory.txt
                       echo "$BACKEND_IP" >> .circleci/ansible/inventory.txt
             - persist_to_workspace:
                   root: ~/

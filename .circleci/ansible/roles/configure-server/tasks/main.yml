@@ -1,10 +1,10 @@
 ---
-name: install python and update packages
+- name: install python and update packages
   become: yes
   yum:
-    name: python
-    state: latest
-    update_cache: yes
+      name: python
+      state: latest
+      update_cache: yes
 
 - name: "upgrade packages"
   become: yes

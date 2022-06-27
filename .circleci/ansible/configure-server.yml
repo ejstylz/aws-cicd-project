@@ -16,12 +16,19 @@
         pause:
             minutes: 1
 
-      - name: "install python for Ansible."
-        become: yes
-        dnf:
-            name: python3
-            state: latest
-            update_cache: yes
+      - name: Install python 3.6 and pip3
+        yum:
+            name:
+                - python36
+                - libselinux-python
+            state: present
+
+      - name: Install SELinux for Python 3
+        pip:
+            name:
+                - selinux
+            state: present
+            executable: pip3
 
   environment:
       - TYPEORM_CONNECTION: "{{ lookup('env', 'TYPEORM_CONNECTION')}}"

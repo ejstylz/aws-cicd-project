@@ -12,16 +12,16 @@
       - ansible_stdout_callback: yaml
 
   pre_tasks:
-      - name: "wait 600 seconds for target connection to become reachable/usable."
-        pause:
-            minutes: 5
+      # - name: "wait 600 seconds for target connection to become reachable/usable."
+      #   pause:
+      #       minutes: 1
 
-      - name: "install python for Ansible."
-        become: yes
-        yum:
-            name: python
-            state: latest
-            update_cache: yes
+      # - name: "install python for Ansible."
+      #   become: yes
+      #   yum:
+      #       name: python
+      #       state: latest
+      #       update_cache: yes
 
   environment:
       - TYPEORM_CONNECTION: "{{ lookup('env', 'TYPEORM_CONNECTION')}}"

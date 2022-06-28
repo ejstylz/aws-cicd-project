@@ -4,16 +4,10 @@
   yum:
       name: "*"
 
-- name: add node.js yum repo
-  become: yes
-  shell: |
-      yum install -y gcc-c++ make
-      curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -
-
 - name: "install dependencies."
   become: yes
   yum:
-      name: ["nodejs", "npm"]
+      name: ["epel-release", "nodejs", "npm"]
       state: latest
       update_cache: yes
 

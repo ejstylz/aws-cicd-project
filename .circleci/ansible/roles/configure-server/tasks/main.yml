@@ -2,7 +2,7 @@
 - name: "upgrade packages"
   become: yes
   yum:
-      upgrade: yes
+      name: "*"
 
 - name: "install dependencies."
   become: yes

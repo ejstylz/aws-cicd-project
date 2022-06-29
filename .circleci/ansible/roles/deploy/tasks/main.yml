@@ -2,21 +2,21 @@
   become: yes
   copy:
       src: /root/project/artifact.tar.gz
-      dest: /home/ubuntu
-      owner: ubuntu
+      dest: /home/ec2-user
+      owner: ec2-user
 
-- name: extract artifact.tar.gz into /home/ubuntu
+- name: extract artifact.tar.gz into /home/ec2-user
   unarchive:
       src: /root/project/artifact.tar.gz
-      dest: /home/ubuntu
+      dest: /home/ec2-user
 
 - name: install npm
   shell:
       cmd: npm install
-      chdir: /home/ubuntu/backend
+      chdir: /home/ec2-user/backend
 
 - name: use pm2 to run backend
   become: yes
   shell: |
-      cd /home/ubuntu/backend
+      cd /home/ec2-user/backend
       pm2 start npm -- start

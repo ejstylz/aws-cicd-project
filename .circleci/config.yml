@@ -182,25 +182,6 @@ jobs:
                       apk add gzip
                       apk add ansible
                       pip install awscli
-                      TYPEORM_HOST="database-1.c7fvnmi085x8.us-east-1.rds.amazonaws.com"
-                      export TYPEORM_HOST
-                      TYPEORM_PORT=5432
-                      export TYPEORM_PORT
-                      TYPEORM_USERNAME="postgres"
-                      export TYPEORM_USERNAME
-                      TYPEORM_PASSWORD="oqHDnsziuM5bzEYQkuFq"
-                      export TYPEORM_PASSWORD
-                      TYPEORM_DATABASE="postgre"
-                      export TYPEORM_DATABASE
-                      TYPEORM_CONNECTION="postgres"
-                      export TYPEORM_CONNECTION
-                      TYPEORM_MIGRATIONS_DIR="./src/migrations"
-                      export TYPEORM_MIGRATIONS_DIR
-                      TYPEORM_ENTITIES="./src/modules/domain/**/*.entity.ts"
-                      export TYPEORM_ENTITIES
-                      TYPEORM_MIGRATIONS="./src/migrations/*.ts"
-                      export TYPEORM_MIGRATIONS
-
             - run:
                   name: Configure server
                   command: |
@@ -312,6 +293,7 @@ jobs:
                         --filters "Name=tag:Name,Values=backend-${CIRCLE_WORKFLOW_ID:0:7}" \
                         --query 'Reservations[*].Instances[*].PublicIpAddress' \
                         --output text`
+                      echo "http://${BACKEND_IP}:3030/api/status"
                       if curl "http://${BACKEND_IP}:3030/api/status" | grep "ok"
                       then
                           return 0

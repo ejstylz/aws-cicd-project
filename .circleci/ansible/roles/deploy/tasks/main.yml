@@ -1,3 +1,8 @@
+- name: "Create backend directory"
+  file:
+      path: /home/ec2-user/backend
+      state: directory
+
 - name: copy util folder to ec2 instance
   become: yes
   copy:
@@ -5,12 +10,12 @@
       dest: /home/ec2-user
       owner: ec2-user
 
-- name: extract artifact.tar.gz into /home/ec2-user
+- name: extract artifact.tar.gz into /home/ec2-user/backend
   unarchive:
       src: /root/project/artifact.tar.gz
-      dest: /home/ec2-user
+      dest: /home/ec2-user/backend
 
-- name: install npm
+- name: install dependencies for project
   shell:
       cmd: npm install
       chdir: /home/ec2-user/backend

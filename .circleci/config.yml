@@ -335,6 +335,9 @@ jobs:
             - image: amazon/aws-cli
         steps:
             - checkout
+            - add_ssh_keys:
+                  fingerprints:
+                      - "ac:40:5d:11:02:0d:87:89:d7:f9:97:2b:8e:af:8e:dd"
             - run:
                   name: Get old stack workflow id
                   command: |

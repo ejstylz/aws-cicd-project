@@ -24,13 +24,13 @@
   become: yes
   shell: |
       cd /home/ec2-user/backend
-      TYPEORM_HOST="database-1.c7fvnmi085x8.us-east-1.rds.amazonaws.com"
+      TYPEORM_HOST="database-1.cenugz8hvoqp.us-east-1.rds.amazonaws.com"
       export TYPEORM_HOST
       TYPEORM_PORT=5432
       export TYPEORM_PORT
       TYPEORM_USERNAME="postgres"
       export TYPEORM_USERNAME
-      TYPEORM_PASSWORD="oqHDnsziuM5bzEYQkuFq"
+      TYPEORM_PASSWORD="OEYSGxwLfBhk4CggjFps"
       export TYPEORM_PASSWORD
       TYPEORM_DATABASE="postgres"
       export TYPEORM_DATABASE

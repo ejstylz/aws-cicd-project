@@ -2,4 +2,4 @@ URL01 = https://github.com/ejstylz/udacity-cicd-project/tree/submission
 URL02 = http://udapeople-a50f7e9.s3-website-us-east-1.amazonaws.com/
 URL03 = http://d34cw31hxxvzox.cloudfront.net/#/employees
 URL04 = http://3.85.170.48:3030/api/status
-URL05 = http://ec2-23-20-105-51.compute-1.amazonaws.com:9090/targets
+URL05 = http://ec2-18-206-213-71.compute-1.amazonaws.com:9090/targets

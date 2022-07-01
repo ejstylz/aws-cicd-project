@@ -337,7 +337,7 @@ jobs:
             - checkout
             - add_ssh_keys:
                   fingerprints:
-                      - "ac:40:5d:11:02:0d:87:89:d7:f9:97:2b:8e:af:8e:dd"
+                      - "ba:88:a6:d8:e3:b3:77:d2:7c:e8:0d:5e:2d:a3:ea:83"
             - run:
                   name: Get old stack workflow id
                   command: |

@@ -1,0 +1,4 @@
+URL01 = https://github.com/ejstylz/udacity-cicd-project
+URL02 = http://udapeople-0b82aee.s3-website-us-east-1.amazonaws.com/#/employees
+URL03 = http://d34cw31hxxvzox.cloudfront.net/#/employees
+URL04 = http://107.21.75.144:3030/api/status

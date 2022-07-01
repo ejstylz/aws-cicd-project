@@ -1,0 +1,26 @@
+---
+- name: "upgrade packages"
+  become: yes
+  yum:
+      name: "*"
+
+- name: add node.js yum repo
+  become: yes
+  shell: |
+      yum install -y gcc-c++ make
+      curl -sL https://rpm.nodesource.com/setup_13.x | sudo -E bash -
+
+- name: "install dependencies."
+  become: yes
+  yum:
+      name: nodejs
+      state: latest
+      update_cache: yes
+
+- name: "install pm2"
+  become: yes
+  npm:
+      name: pm2
+      global: yes
+      production: yes
+      state: present
